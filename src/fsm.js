@@ -3,13 +3,15 @@ class FSM {
 
         this.events = [];
         var t;
-        this.config = config;
         this.history = [];
         this.passStates = [];
+        this.config = config;
+
+
         this.state = config.initial;
 
 
-        this.history.push(this.state);
+
 
 
         for (var key in config.states) {
@@ -18,6 +20,7 @@ class FSM {
                 this.events.push(item);
             }
         }
+        this.history.push(this.state);
     }
 
     /**
@@ -45,10 +48,7 @@ class FSM {
      * @param event
      */
     trigger(event) {
-        var obj = this.config.states[this.state].transitions;
-        if (!obj[event]) {
-            throw new Error();
-        } e
+
     }
 
     /**
